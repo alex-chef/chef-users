@@ -1,0 +1,19 @@
+# Managed by Chef for <%= node[:fqdn] %>
+# Local changes will be overwritten.
+
+<% @config.each do |host, config| -%>
+Host <%= host %>
+<% if config[:hostname] -%>
+  HostName <%= config[:hostname] %>
+<% end -%>
+<% if config[:user] -%>
+  User <%= config[:user] %>
+<% end -%>
+<% if config[:identity_file] -%>
+  IdentityFile <%= config[:identity_file] %>
+<% end -%>
+<% if config[:strict_host_key_checking] -%>
+  StrictHostKeyChecking <%= config[:strict_host_key_checking] %>
+<% end -%>
+
+<% end -%>
